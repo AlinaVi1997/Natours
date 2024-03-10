@@ -1,0 +1,56 @@
+@mixin clearfix{
+    &::after{
+        content:"";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin absCenter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//media query manager
+/*
+0 - 600px: phone 
+600 - 900px: table portait 
+900 - 1200px: tablet langspace 
+1200 - 1800px: is whre our normal styles apply
+1800px + : big desktop
+*/
+@mixin respond-phone{
+    @media  (max-width:600px){@content};
+}
+
+/*
+$breackpoint argument choises:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+Order: Base + typography > general laout  +grid >page laout >components
+
+1em =16px
+600/16=37.5
+*/
+
+@mixin respond($breackpoint){
+    @if $breackpoint == phone{
+        @media only screen and (max-width:37.5em) {@content}; //600px
+    }
+    @if $breackpoint == tab-port{
+        @media only screen and (max-width:56.25em) {@content}; //900px
+    }
+    @if $breackpoint == tab-land{
+        @media only screen and (max-width:75em) {@content}; //1200px
+    }
+    @if $breackpoint == big-desktop{
+        @media only screen and (min-width:112.5em) {@content}; //1800px
+    }
+}
+
+
