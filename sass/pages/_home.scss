@@ -53,7 +53,7 @@
                                      rgba($color-primary-white, .9) 0%,
                                      rgba($color-primary-white, .9) 50%,
                                      transparent 50%), 
-                                     url(/img/nat-10.jpg);
+                                     url(../img/nat-10.jpg);
     background-size:100%;
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-dark, .2);
@@ -62,14 +62,14 @@
                     rgba($color-primary-white, .9) 0%,
                     rgba($color-primary-white, .9) 65%,
                     transparent 65%),
-                url(/img/nat-10.jpg);
+                url(../img/nat-10.jpg);
         background-size:cover
         }
         @include respond(tab-port){
             background-image: linear-gradient(to right,
                         rgba($color-primary-white, .9) 0%,
                         rgba($color-primary-white, .9) 100%,),
-                    url(/img/nat-10.jpg);
+                    url(../img/nat-10.jpg);
         }
     &__form{
         width: 50%;
